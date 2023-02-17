@@ -60,9 +60,9 @@ def install_deps():
     if (base.is_dir("./node_js_setup_10.x")):
       base.delete_dir("./node_js_setup_10.x")
     base.cmd("sudo", ["apt-get", "remove", "--purge", "-y", "nodejs"])
-    base.download("https://deb.nodesource.com/setup_10.x", "./node_js_setup_10.x")
+    base.download("https://deb.nodesource.com/setup_14.x", "./node_js_setup_14.x")
     base.cmd('curl -fsSL https://deb.nodesource.com/gpgkey/nodesource.gpg.key | sudo apt-key add -')
-    base.cmd("sudo", ["bash", "./node_js_setup_10.x"])
+    base.cmd("sudo", ["bash", "./node_js_setup_14.x"])
     base.cmd("sudo", ["apt-get", "install", "-y", "nodejs"])
     base.cmd("sudo", ["npm", "install", "-g", "npm@6"])
   else:
