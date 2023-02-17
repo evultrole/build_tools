@@ -19,11 +19,11 @@ def get_branch_name(directory):
 
 def install_qt():
   # qt
-  if not base.is_file("./qt_source_5.9.9.tar.xz"):
-    base.download("https://download.qt.io/archive/qt/5.9/5.9.9/single/qt-everywhere-opensource-src-5.9.9.tar.xz", "./qt_source_5.9.9.tar.xz")
+  if not base.is_file("./qt_source_5.15.8.tar.xz"):
+    base.download("https://download.qt.io/archive/qt/5.15/5.15.8/single/qt-everywhere-opensource-src-5.15.8.tar.xz", "./qt_source_5.15.8.tar.xz")
 
-  if not base.is_dir("./qt-everywhere-opensource-src-5.9.9"):
-    base.cmd("tar", ["-xf", "./qt_source_5.9.9.tar.xz"])
+  if not base.is_dir("./qt-everywhere-src-5.15.8"):
+    base.cmd("tar", ["-xf", "./qt_source_5.15.8.tar.xz"])
 
   qt_params = ["-opensource",
                "-confirm-license",
@@ -51,9 +51,9 @@ def install_qt():
                "-skip", "qtwebview",
                "-skip", "qtwebengine"]
 
-  base.cmd_in_dir("./qt-everywhere-opensource-src-5.9.9", "./configure", qt_params)
-  base.cmd_in_dir("./qt-everywhere-opensource-src-5.9.9", "make", ["-j", "4"])
-  base.cmd_in_dir("./qt-everywhere-opensource-src-5.9.9", "make", ["install"])
+  base.cmd_in_dir("./qt-everywhere-src-5.15.8", "./configure", qt_params)
+  base.cmd_in_dir("./qt-everywhere-src-5.15.8", "make", ["-j", "4"])
+  base.cmd_in_dir("./qt-everywhere-src-5.15.8", "make", ["install"])
   return
 
 if not base.is_file("./node_js_setup_10.x"):
