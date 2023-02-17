@@ -31,7 +31,7 @@ def install_qt():
                "-shared",
                "-accessibility",
                "-prefix",
-               "./../qt_build/Qt-5.9.9/gcc_64",
+               "./../qt_build/Qt-5.15.8/gcc_64",
                "-qt-zlib",
                "-qt-libpng",
                "-qt-libjpeg",
